@@ -15,6 +15,11 @@ interface UserState {
   clearUserData: () => void;
 }
 
+interface PersistedUserState {
+  currentUser: User | null;
+  interestedEventIds: number[];
+}
+
 export const useUserStore = create<UserState>()(
   persist(
     (set, get) => ({
@@ -47,14 +52,16 @@ export const useUserStore = create<UserState>()(
       name: 'user-storage',
       storage: createJSONStorage(() => AsyncStorage),
       // Custom serialization for Set
-      partialize: (state) => ({
+      partialize: (state): PersistedUserState => ({
         currentUser: state.currentUser,
         interestedEventIds: Array.from(state.interestedEventIds),
       }),
       // Custom deserialization for Set
       onRehydrateStorage: () => (state) => {
         if (state) {
-          state.interestedEventIds = new Set(state.interestedEventIds as unknown as number[]);
+          state.interestedEventIds = new Set(
+            (state as unknown as PersistedUserState).interestedEventIds
+          );
         }
       },
     }

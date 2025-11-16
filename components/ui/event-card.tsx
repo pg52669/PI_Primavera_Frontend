@@ -85,8 +85,7 @@ export function EventCard({ event, onPress, isInterested = false, style }: Event
         <View style={styles.interestCount}>
           <IconSymbol name="person.2.fill" size={20} color={colors.primary} />
           <Text style={[styles.interestText, { color: colors.textSecondary }]}>
-            {event.interested_count} {event.interested_count === 1 ? 'pessoa' : 'pessoas'} interessada
-            {event.interested_count === 1 ? '' : 's'}
+            {event.interested_count} {event.interested_count === 1 ? 'pessoa interessada' : 'pessoas interessadas'}
           </Text>
         </View>
         <IconSymbol name="chevron.right" size={24} color={colors.icon} />
