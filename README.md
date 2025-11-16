@@ -5,6 +5,7 @@ A React Native mobile application built with Expo for community event management
 ## 🎯 Project Overview
 
 This application provides a simplified, senior-friendly interface for:
+
 - Browsing community events
 - Marking interest in events
 - Viewing personalized event lists
@@ -13,6 +14,7 @@ This application provides a simplified, senior-friendly interface for:
 ### Key Features
 
 ✨ **Senior-Friendly Design**
+
 - Large text (minimum 18px body, 24px+ headers)
 - High contrast colors (WCAG AAA compliance - 7:1 ratio)
 - Big touch targets (minimum 48x48dp)
@@ -20,6 +22,7 @@ This application provides a simplified, senior-friendly interface for:
 - Haptic feedback for all interactions
 
 📱 **Core Functionality**
+
 - Event browsing with filters
 - Interest marking/unmarking
 - Personal event tracking
@@ -32,17 +35,20 @@ This application provides a simplified, senior-friendly interface for:
 ### Quick Start
 
 1. **Start the backend API** (in a separate terminal):
+
    ```bash
    cd ../PI_Primavera
    docker compose up
    ```
 
 2. **Install dependencies** (first time only):
+
    ```bash
    npm install
    ```
 
 3. **Start the Expo development server**:
+
    ```bash
    npm start
    ```
@@ -86,6 +92,7 @@ PI_Primavera_Frontend/
 ## 🎨 Design System
 
 ### Colors
+
 - **Primary**: `#2196F3` (Clear blue)
 - **Secondary**: `#4CAF50` (Green for positive actions)
 - **Background**: `#FFFFFF` (Pure white)
@@ -93,6 +100,7 @@ PI_Primavera_Frontend/
 - **Error**: `#D32F2F` (Clear red)
 
 ### Typography
+
 - **H1**: 32px, bold
 - **H2**: 28px, bold
 - **H3**: 24px, semibold
@@ -101,6 +109,7 @@ PI_Primavera_Frontend/
 - **Button**: 20px, bold
 
 ### Spacing
+
 - XS: 8px
 - SM: 16px
 - MD: 24px
@@ -112,15 +121,18 @@ PI_Primavera_Frontend/
 The app connects to a Flask backend API. Key endpoints:
 
 ### Events
+
 - `GET /events` - List all events (filters: name, date)
 - `POST /event/{id}/interest` - Mark interest
 - `DELETE /event/{id}/interest` - Remove interest
 
 ### Users
+
 - `POST /user` - Create user
 - `GET /users` - List users
 
 ### Locations
+
 - `GET /districts` - Get districts
 - `GET /municipalities` - Get municipalities
 - `GET /parishes` - Get parishes
@@ -158,6 +170,7 @@ The app uses Zustand for state management:
 ### Navigation
 
 Uses Expo Router with file-based routing:
+
 - Bottom tabs: Events, My Events, Profile
 - Modal/push navigation for event details
 
@@ -174,11 +187,13 @@ Uses Expo Router with file-based routing:
 ## 🐛 Troubleshooting
 
 ### API Connection Issues
+
 - Ensure backend is running: `docker-compose up`
 - Check API URL in `.env` matches backend
 - For physical device: Use computer's IP instead of localhost
 
 ### Build Errors
+
 ```bash
 # Clear cache and reinstall
 rm -rf node_modules
@@ -187,6 +202,7 @@ npx expo start -c
 ```
 
 ### AsyncStorage Errors
+
 ```bash
 # Reinstall AsyncStorage
 npm install @react-native-async-storage/async-storage
@@ -207,7 +223,7 @@ npx expo prebuild --clean
 
 ## 🤝 Contributing
 
-This is an academic project for University of Minho. 
+This is an academic project for University of Minho.
 
 ## 📄 License
 
@@ -218,7 +234,3 @@ See LICENSE file for details.
 Integrated Project - University of Minho
 Department of Informatics
 2024/2025
-
----
-
-**Built with ❤️ for the senior community of Braga, Portugal**
